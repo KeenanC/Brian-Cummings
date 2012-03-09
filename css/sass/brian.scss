@@ -1,0 +1,1023 @@
+/* 	--------------------------------------------------------------
+	GRID MIXIN
+	--------------------------------------------------------------  */
+
+	$column-width: 70px; 	// 12 columns = 840px
+	$gutter-width: 12px; 	// 11 gutter = 132px
+
+
+	@mixin grid-unit($span) {
+		float: left;
+		margin-right: $gutter-width;
+		width: ($column_width * $span) + ($gutter_width * ($span - 1) );
+	}
+
+
+
+	@mixin border-radius($curve) {
+		-webkit-border-radius: $curve;
+		-moz-border-radius: $curve;
+		-ms-border-radius: $curve;
+		border-radius: $curve;
+	}
+
+
+
+	$primary: 		#E3BD00;
+	$dark_yellow: 	#A49500;
+	$light_grey:	#F1F1F2;
+	$dark_grey: 	#414042;
+	$darker_grey: 	#333;
+
+
+
+	
+	@mixin tisa_regular {
+		font-family: "ff-tisa-web-pro",serif;
+		font-style: normal;
+		font-weight: 400;
+		-webkit-font-smoothing: antialiased;
+	}
+
+
+	@mixin tisa_bold {
+		font-family: "ff-tisa-web-pro",serif;
+		font-style: normal;
+		font-weight: 700;
+		-webkit-font-smoothing: antialiased;
+	}
+
+
+	@mixin alternate_gothic {
+		font-family: "alternate-gothic-no-3-d",sans-serif;
+		font-style: normal;
+		font-weight: 400;
+		text-transform: uppercase;
+		font-size: 20px;
+		letter-spacing: 1px;
+		-webkit-font-smoothing: antialiased;
+	}
+
+
+	@mixin futura {
+		font-family: "futura-pt",sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		-webkit-font-smoothing: antialiased;
+	}
+
+
+
+
+
+
+	@mixin buttons {
+
+		@include alternate_gothic;	
+		font-size: 20px;
+		@include border-radius(20px);
+		color: white;
+		background: $primary;
+		padding: 4px 13px 2px;
+		margin-left: -2px;
+		margin-top: 20px;
+		display: inline-block;
+		-moz-box-shadow:    0 4px $dark_yellow;
+	 	-webkit-box-shadow: 0 4px $dark_yellow;
+		box-shadow:         0 4px $dark_yellow;
+		-webkit-transition: all .04s ease-in-out;
+		-moz-transition: all .04s ease-in-out;
+	    transition: all .04s ease-in-out;
+
+			&:hover {
+			   background: $primary - 11;
+			   margin-top: 24px;
+			   box-shadow: none;
+			   -webkit-transition: all .1s ease-in-out;
+			   transition: all .1s ease-in-out;
+			}
+
+			&:active {
+			   border-top-color: #e3bd00;
+			   background: #e3bd00;
+			}
+	}
+
+
+
+
+
+
+
+/* 	--------------------------------------------------------------
+	@ FONT FACE
+	--------------------------------------------------------------  */
+
+	@font-face { 
+		font-family: 'liberator';
+		src: url('liberator/liberator-webfont.eot');
+		src: url('liberator/liberator-webfont.eot?#iefix') format('embedded-opentype'),
+		     url('liberator/liberator-webfont.woff') format('woff'),
+		     url('liberator/liberator-webfont.ttf') format('truetype'),
+		     url('liberator/liberator-webfont.svg#webfont') format('svg');
+	}
+
+
+
+	@mixin liberator {
+		font: 15px 'liberator';
+		letter-spacing: 2px;
+		word-spacing: -3px;
+		-webkit-font-smoothing: antialiased;
+	}
+
+
+
+
+
+/* 	--------------------------------------------------------------
+	GLOBAL STYLES
+	--------------------------------------------------------------  */
+
+	a {
+		text-decoration: none;
+	}
+
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	body {
+		opacity: 1;
+	}
+
+	#content {
+		margin: 0 auto;
+		width: 972px;
+	}
+
+	.typekit-badge {display:none !important;}
+	
+
+
+/* 	--------------------------------------------------------------
+	HEADER ELEMENTS
+	--------------------------------------------------------------  */
+
+
+
+	#vertical_rules {
+		position: absolute;
+		top: 29px;
+		z-index: -10;
+	}
+
+
+	#white_cover_fade {
+		position: absolute;
+		top: 0px;
+		left: -229px;
+	}
+
+
+	#header {
+		@include grid-unit(12);
+		position: fixed;
+		z-index: 100;
+		background: white;
+		margin: 0 auto;
+		float: none;
+		height: 149px;	
+		border-bottom: 1px solid $dark_grey;
+	}
+
+
+
+	#bio, #listen, #classes, #contact {
+		@include grid-unit(2);
+		height: 112px;
+		padding: 14px 0 20px;
+		margin-top: 14px;
+		@include border-radius(100px);
+		transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		-moz-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+
+			&:hover {
+				-webkit-box-shadow: inset 0 7px 10px $light_grey;
+			/*	background: $light_grey; */
+				opacity: .8;
+				transition: all .3s ease-in-out;
+				-webkit-transition: all .3s ease-in-out;
+				-moz-transition: all .3s ease-in-out;
+				-ms-transition: all .3s ease-in-out;
+			}	
+	}
+
+
+
+	#logo {
+		@include grid-unit(4);
+		padding: 20px 0;
+		margin-top: -53px;
+		height: 112px;
+	}
+
+
+
+	#bio {
+		margin-right: 0;
+	}
+
+
+	#header_place_holder {
+		margin-top: 156px;
+		width: 120%;
+		background: green;
+		z-index: 5;
+	}
+
+
+
+/* 	--------------------------------------------------------------
+	BIO
+	--------------------------------------------------------------  */
+
+
+	#rule1 {
+		border-bottom: 1px solid $darker_grey;	
+		padding: 0px 0px;
+		margin-bottom: 8px;
+	}
+
+
+	#bio_header {
+		@include grid-unit(8);
+	}
+
+	#clients_header {
+		@include grid-unit(4);
+		margin-right: 0;
+	}
+
+	.headers {
+		background: $darker_grey;
+		margin-top: 10px;
+		height: 50px;
+		padding: 5px 0px 3px;
+		margin-bottom: 17px;
+		
+			.header_nested {
+				@include liberator;
+				color: $primary;
+				margin: 18px 24px;	
+			}
+	}
+
+
+
+	#bio_text {
+		@include grid-unit(8);
+		background: $light_grey;
+
+			#bio_text_nested {
+				padding: 23px 40px 20px 25px;
+				margin: 12px;
+				height: 290px;
+				background: white;
+				@include tisa_regular;
+				font-size: 20px;
+				line-height: 28px;
+				color: $darker_grey;
+			}
+	}
+
+
+	#work_with_brian_btn {
+		text-decoration: none;
+		@include buttons;
+		position: absolute;
+		bottom: 25px;
+		left: 23px;
+
+		&:hover {
+				bottom: 22px;
+				}
+		}
+
+
+/*	#work_with_brian_btn {
+		background: $primary;
+		padding: 5px 15px 3px;
+		margin-left: -4px;
+		margin-top: 20px;
+		@include alternate_gothic;	
+		@include border-radius(20px);
+	} */
+
+
+
+/* 	--------------------------------------------------------------
+	CLIENT LIST
+	--------------------------------------------------------------  */
+
+
+	#clients_text {
+		@include grid-unit(4);
+		margin-right: 0;
+		background: $light_grey;
+
+			#clients_text_nested {
+				padding: 23px 0px 20px 13px;
+				margin: 12px;
+				height: 290px;
+				background: white;
+			}
+	}
+	
+
+	.clients_lists {
+		@include tisa_regular;
+		font-style: italic;
+		font-size: 14px;
+		line-height: 22px;
+		color: $darker_grey;
+		list-style: none;
+		float: left;
+		margin-right: 0px;
+	}
+
+
+	#list1 {
+		width: 130px;
+		margin-left: 13px;
+		}
+
+	#list2 {
+		width: 110px;
+		margin-left: 0px;
+		margin-right: 0;
+		}
+
+
+	#more_on_imdb_btn {
+		text-decoration: none;
+		@include buttons;
+		position: absolute;
+		bottom: 25px;
+		left: 23px;
+
+			&:hover {
+				bottom: 22px;
+				}
+		}
+
+
+
+
+
+/* 	--------------------------------------------------------------
+	TWITTER BOX
+	--------------------------------------------------------------  */
+
+
+#rule2 {
+	border-bottom: 1px solid $dark_grey + 140;
+	padding: 10px 0px 15px;
+	clear: both;
+	}
+
+
+
+	#tweet_bird {
+		float: left;
+		display: inline;
+		margin-left: -70px;
+		margin-top: 5px;
+	}
+
+	#tweets {
+		margin-top: 10px;
+		@include futura;
+		letter-spacing: 1px;
+		font-size: 14px;
+		-webkit-font-smoothing: subpixel-antialiased;
+		font-style: italic;
+		@include grid-unit(10);
+		background: $light_grey;
+		color: $dark_grey + 22;
+
+			#tweets_nested {
+				padding: 9px 0px 19px 13px;
+				margin: 12px;
+				height: 8px;
+				background: white;
+			}
+
+			
+	}
+
+
+	#tweets_nested:before {
+			   display: block;
+			   content:"";
+			   position: absolute;
+			   margin: -2px -35px;
+			   border-top: 10px solid transparent;
+			   border-right: 10px solid $light_grey;
+			   border-bottom: 10px solid transparent;
+			}
+
+
+	#follow_twitter {
+		@include grid-unit(2);
+		display: block;
+		margin-top: 10px;
+		margin-right: 0;
+		background: $darker_grey;
+		@include liberator;
+		color: $primary;
+		font-size: 20px;
+		line-height: 21px;
+		height: 46px;
+		padding: 7px 0;
+
+			&:hover {
+				color: $darker_grey;
+				background: $primary;
+				}
+
+			p {
+				margin-left: 16px;
+				}
+			
+			span {
+				@include futura;
+				font-style: italic;
+				font-size: 15px;
+				letter-spacing: 1px;
+				word-spacing: 0px;
+				}	
+		}
+
+
+
+	#tweet_load a {
+		color: $primary;
+
+		&:hover {
+			color: $dark_grey;
+			}
+
+	}
+
+
+
+
+/* 	--------------------------------------------------------------
+	TALKING HEADS
+	--------------------------------------------------------------  */
+
+
+	#rule3, #rule4 {
+		border-bottom: 1px solid $dark_grey + 140;	
+		padding: 5px 0px 5px;
+		clear: both;	
+	}
+
+
+
+	#rule4_2 {
+		border-bottom: 1px solid $dark_grey + 140;	
+		padding: 5px 0px 5px;
+		clear: both;	
+	}
+
+
+	#rule3 {
+		margin-bottom: 12px;
+	}
+
+
+	#head1_nested {
+		background: $darker_grey;
+		color: $primary;
+		font-size: 30px;
+		line-height: 39px;
+		letter-spacing: 3px;
+
+			span {
+				@include futura;
+				font-style: italic;	
+				font-size: 22px;
+				letter-spacing: 2px;
+				line-height: 44px;
+			}
+		}
+
+
+	.head_box {
+
+		@include grid-unit(3);
+		background: $light_grey;
+		margin-top: 10px;
+
+			.head_box_nested {
+				display: block;
+				@include liberator;
+				font-size: 15px;
+				line-height: 15px;
+				letter-spacing: 1px;
+				margin: 12px;
+				height: 170px;
+				padding: 20px 0;
+				text-align: center;
+				color: white;
+				background-color: white;
+
+					.project_subtitle {
+						@include tisa_bold;
+						font-style: italic;
+						letter-spacing: 1px;
+						word-spacing: normal;	
+					}
+
+					p {
+						margin-top: 116px;
+						letter-spacing: 0px;
+						word-spacing: 0px;
+					}
+		
+					&:hover {
+						color: $darker_grey;
+					}	
+
+					&:active {
+						color: $primary;
+						-webkit-transition: all .4s ease-in-out;
+					}
+			}
+		}
+
+
+
+
+	#head2_nested {
+		background: url('../img/brians/mad_brian.png') no-repeat center center;
+		background-color: white;
+	}	
+
+
+	#head3_nested {
+		background: url('../img/brians/crazy_brian.png') no-repeat center center;
+		background-color: white;
+	}	
+
+	#head4_nested {
+		background: url('../img/brians/shark_brian.png') no-repeat center center;
+		background-color: white;
+	}	
+
+	#head5_nested {
+		background: url('../img/brians/happy_brian.png') no-repeat center center;
+		background-color: white;
+	}	
+
+	#head6_nested {
+		background: url('../img/brians/tired_brian.png') no-repeat center center;
+		background-color: white;
+	}	
+
+	#head7_nested {
+		background: url('../img/brians/squinty_brian.png') no-repeat center center;
+		background-color: white;
+	}	
+
+	#head8_nested {
+		background: url('../img/brians/scared_brian.png') no-repeat center center;
+		background-color: white;
+	}	
+
+	#head9_nested {
+		background: url('../img/brians/scared_brian.png') no-repeat center center;
+		background-color: white;
+	}	
+
+	#head10_nested {
+		background: url('../img/brians/scared_brian.png') no-repeat center center;
+		background-color: white;
+	}	
+
+	#head11_nested {
+		background: url('../img/brians/scared_brian.png') no-repeat center center;
+		background-color: white;
+	}	
+
+	#head12_nested {
+		background: url('../img/brians/scared_brian.png') no-repeat center center;
+		background-color: white;
+	}	
+
+
+
+
+	#head4, #head8, #head12 {
+		margin-right: 0px;
+	}	
+
+
+
+/* 	--------------------------------------------------------------
+	FULL DEMOS
+	--------------------------------------------------------------  */
+
+
+
+#rule5 {
+		border-bottom: 1px solid $dark_grey + 140;	
+		padding: 5px 0px 5px;
+		clear: both;	
+		margin-bottom: 5px;
+		padding-top: 20px;
+	}
+
+
+
+
+
+	
+	#full_demos, #demo1, #demo2, #demo3, #demo4, #demo5 {
+		@include grid-unit(2);
+		}
+
+
+	.demo_button_container {
+		@incude grid-unit(2);
+		height: 65px;
+		}
+
+
+	.demo_button {
+		@include buttons;
+		@include grid-unit(1.7);
+		text-align: center;
+		font-size: 22px;
+		}
+
+
+	#demo5 {
+		margin-right: 0px;
+		}
+
+
+
+/* 	--------------------------------------------------------------
+	VOICE OVER WORKSHOP
+	--------------------------------------------------------------  */
+
+
+#rule6 {
+		border-bottom: 1px solid $dark_grey + 140;	
+		padding: 5px 0px 5px;
+		clear: both;	
+		margin-bottom: 12px;
+	}
+
+
+
+
+	#classes_header {
+		@include grid-unit(9);
+		}
+
+
+	#contact_header {
+		@include grid-unit(3);
+		margin-right: 0;
+		}
+
+
+
+	#classes_text {
+		@include grid-unit(9);
+		background: $light_grey;
+
+			#classes_text_nested {
+				padding: 23px 40px 20px 25px;
+				margin: 12px;
+				height: 380px;
+				background: white;
+				@include tisa_regular;
+				font-size: 20px;
+				line-height: 28px;
+				color: $darker_grey;
+
+					#classes_text_paragraph {
+						width: 345px;
+						float: left;
+					}
+
+
+					#workshop_image_container {
+						margin-right: -20px;
+						margin-top: 1px;
+						float: right;
+					}
+
+					#workshop_image {
+						float: right;	
+						top: 0;
+					}
+				}
+		}
+
+	
+	#class_sign_up_btn {
+		@include buttons;
+		padding: 2px 14px;
+		}
+
+
+
+/* 	--------------------------------------------------------------
+	CONTACT FORM
+	--------------------------------------------------------------  */
+
+
+
+	#contact_form_container {
+		@include grid-unit(3);
+		margin-right: 0;
+	
+			.inputs {
+				border: none;
+				@include futura;
+				color: $dark_grey;
+				font-size: 15px;
+				font-style: italic;
+				width: 222px;
+				height: 38px;
+				margin-bottom: 12px;
+				padding: 0 6px;
+				background: $light_grey;
+
+				&:focus {
+					outline: none;
+					background: $light_grey - 22;
+				}
+			}
+	}
+
+
+	select {
+		margin-bottom: 13px;
+	}
+
+
+	#message {
+		@include futura;
+		color: $dark_grey;
+		font-size: 15px;
+		width: 218px;
+		height: 185px;
+		padding: 8px 8px;
+		background: $light_grey;
+		border: none;
+		outline: none;
+		resize: none;
+		margin-bottom: -5px;
+
+			&:focus{
+				background: $light_grey - 22;
+			}	
+		}
+
+	
+	#submit_button {
+		@include buttons;
+		border: none;
+
+			&:hover {
+				margin-bottom: -4px;
+			}				
+		}	
+
+
+	#contact_info {
+		@include futura;
+		padding: 0px 0;
+		font-size: 14px;
+		list-style: none;
+		margin-top: 5px;
+		color: $dark_grey + 88;
+		font-style: italic;
+		line-height: 22px;
+		
+			&:before {
+                display: block;
+				content:"";
+				position: relative;
+	            bottom: 77px;
+	            left: 7px;
+				margin: 0px 6px;
+				border-top: 24px solid transparent;
+				border-right: 24px solid white;
+				border-bottom: 0px solid transparent;
+                }
+
+             a {
+             	color: $dark_grey + 33;
+             }
+
+             a:hover {
+            	color: $darker_grey;
+            	}    
+
+		}
+
+
+
+
+
+
+
+
+	#mic {
+		@include grid-unit(12);
+		margin: 35px auto 59px;
+		height: 50px;
+	}
+
+	#mic img {
+		display: block;
+		margin: 0 auto;
+	}
+
+
+
+
+
+
+
+
+
+
+	#jplayer_footer {
+		height: 0px;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: $darker_grey - 32;
+		min-width: 990px;
+	}
+
+
+
+	#jp_container_1 {
+		width: 100%;
+		border: none;
+		
+
+			.jp-title {
+				border: none;
+				color: $light_grey - 66;
+				width: 19.9%;
+				float: left;
+				background: $darker_grey - 32;
+				border-right: 1px dashed $light_grey - 88;
+			
+
+					.jplayer_audio_name {
+						display: block;
+						@include liberator;
+						font-size: 14px;
+						padding: 9px 0 4px;
+						border-bottom: 1px dashed $light_grey - 88;		
+					}
+
+					.jplayer_client {
+						@include tisa_bold;
+						font-style: italic;
+						font-size: 13px;
+						letter-spacing: 1px;
+						padding: 4px 0;
+					}
+
+
+				}	
+
+
+			.jp-gui {
+				display: inline;
+				width: 80%;
+				float: right;
+				background: none;
+				}	
+
+
+			.jp-audio, .jp-controls {
+				padding: 10px 20px;
+				/* background: $light_grey; */
+				width: 150px;
+
+					
+					li {
+						padding: 0;
+						width: 30px;
+						margin: 0px 20px 0 0;
+						}
+
+					.jp-play, .jp-pause {
+						margin: 0px;
+
+						&:active {
+								outline: none;
+							}
+						}	
+
+
+					.jp-mute, .jp-unmute, .jp-volume-max {
+						width: 25px;
+						height: 25px;
+						margin: 6px 0;
+							&:active {
+								outline: none;
+							}
+						}
+
+
+
+					.jp-mute {
+						background-position: 0px -147px;
+						z-index: 1200;
+							&:hover {
+								background-position: 0 -146px;
+							}
+						}
+
+
+					.jp-unmute {
+						background-position: -57px -147px;
+							&:hover {
+								background-position: -57px -146px;
+							}
+						}	
+
+
+					.jp-volume-max {
+						margin-left: 33px;
+						background-position: 0px -176px;
+							&:hover {
+								background-position: 0 -175px;
+							}
+						}
+
+				}	
+
+
+
+			.jp-volume-bar {
+				margin: 0;
+				position: absolute;
+				left: 100px;
+				top: 27px;
+				}	
+
+
+			.jp-progress {
+				display: block;
+				position: absolute;
+				left: 200px;
+				top: 27px;
+				height: 6px;
+				width: 66%;
+				}
+
+			.jp-close {
+				@include liberator;
+				color: $primary;
+				float: right;
+				position: relative;
+				left: -12px;
+				top: -35px;
+					
+					&:hover {
+						color: $light_grey;
+					}
+					
+					&:active {
+						outline: none;
+					}
+				}
+
+
+	}
+
+
+
+
+
+
