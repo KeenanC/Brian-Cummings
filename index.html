@@ -70,11 +70,37 @@
 
 	  	$(document).ready(function() {
 
-	  		$('#head2_nested').click(function() {
-	  			$('#jplayer_footer').animate( {'height':'60px' }, 200 );
-	  		});
+				  
+			 $("#jquery_jplayer_1").jPlayer({
 
-	  	});
+			        ready: function () {
+
+			          $(this).jPlayer("setMedia", {
+			          	mp3: 'audio/01_amex_card.mp3'
+			          });
+			        },
+
+			        swfPath: "/js/jplayer",
+			        supplied: "mp3",
+
+			 });
+			
+			$(".audio_click").click(function(e) {
+				e.preventDefault();
+				$('#jplayer_footer').animate( {'height':'60px' }, 200 );
+				var audio = $(e.target).data('audio');
+				console.log(audio);
+
+				$("#jquery_jplayer_1").jPlayer("setMedia", {
+					mp3: "audio/" + audio
+				});
+				$("#jquery_jplayer_1").jPlayer("play");
+			});
+
+		});
+</script>
+
+
 
 
 	  </script>
@@ -91,7 +117,6 @@
 	<script type="text/javascript">
 	
 		$(document).ready(function() {
-			
 			//	ONE CORNER ROUNDED
 			$('.outlined_box').corner("bevel br 18px").parent().css('padding', '0px').corner("bevel br 24px");
 
@@ -297,7 +322,7 @@
 
 
 		<div id="head2" class="head_box">
-			<a href="#work_with_brian_btn" id="head2_nested" class="head_box_nested outlined_box_4corners">
+			<a href="#work_with_brian_btn" id="head2_nested" class="head_box_nested outlined_box_4corners audio_click" data-name='Angry Brian' data-client='client 1' data-audio='01_warrior.mp3'>
 				Angry Brian<br />
 				<span class="project_subtitle">client name</span>
 				<p>no.1</p>
@@ -647,35 +672,6 @@
 
 
 </div>
-
-
-
-
-<script type="text/javascript">
-
-$(document).ready(function(){
-
-  $("#jquery_jplayer_1").jPlayer({
-
-        ready: function () {
-
-          $(this).jPlayer("setMedia", {
-          	mp3: 'audio/01_amex_card.mp3'
-          });
-        },
-
-        swfPath: "/js/jplayer",
-        supplied: "mp3",
-        
-       
-
-      });
-    
-    });
-</script>
-
-
-
 
 <script type="text/javascript" src="js/tweets.js"></script>
 
