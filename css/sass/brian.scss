@@ -285,7 +285,7 @@
 			#bio_text_nested {
 				padding: 23px 40px 20px 25px;
 				margin: 12px;
-				height: 290px;
+				height: 350px;
 				background: white;
 				@include tisa_regular;
 				font-size: 20px;
@@ -299,11 +299,11 @@
 		text-decoration: none;
 		@include buttons;
 		position: absolute;
-		bottom: 25px;
+		bottom: 20px;
 		left: 23px;
 
 		&:hover {
-				bottom: 22px;
+				bottom: 17px;
 				}
 		}
 
@@ -332,7 +332,7 @@
 			#clients_text_nested {
 				padding: 23px 0px 20px 13px;
 				margin: 12px;
-				height: 290px;
+				height: 350px;
 				background: white;
 			}
 	}
@@ -340,25 +340,44 @@
 
 	.clients_lists {
 		@include tisa_regular;
-		font-style: italic;
-		font-size: 14px;
-		line-height: 22px;
+		font-size: 13px;
+		line-height: 17px;
 		color: $darker_grey;
 		list-style: none;
 		float: left;
 		margin-right: 0px;
+
+			li:before {
+				content: "·";
+				margin-right: 2px;
+			}
+
+
+			span {
+				color: $light_grey - 66;
+				display: inline-block;
+				text-indent: 6px;
+				font-style: italic;
+			}
+
 	}
 
 
 	#list1 {
-		width: 130px;
+		width: 120px;
 		margin-left: 13px;
+		line-height: 23px;
 		}
 
 	#list2 {
-		width: 110px;
+		width: 120px;
 		margin-left: 0px;
 		margin-right: 0;
+
+			li {
+				margin-bottom: 5px;
+			}
+
 		}
 
 
@@ -366,11 +385,11 @@
 		text-decoration: none;
 		@include buttons;
 		position: absolute;
-		bottom: 25px;
+		bottom: 20px;
 		left: 23px;
 
 			&:hover {
-				bottom: 22px;
+				bottom: 17px;
 				}
 		}
 
@@ -528,7 +547,7 @@
 				display: block;
 				@include liberator;
 				font-size: 15px;
-				line-height: 15px;
+				line-height: 16px;
 				letter-spacing: 1px;
 				margin: 12px;
 				height: 170px;
@@ -539,8 +558,9 @@
 
 					.project_subtitle {
 						@include tisa_bold;
+						font-size: 13px;
 						font-style: italic;
-						letter-spacing: 1px;
+						letter-spacing: 0px;
 						word-spacing: normal;	
 					}
 
@@ -736,7 +756,14 @@
 	
 	#class_sign_up_btn {
 		@include buttons;
-		padding: 2px 14px;
+		text-decoration: none;
+		position: absolute;
+		bottom: 20px;
+		left: 23px;
+
+			&:hover {
+					bottom: 17px;
+					}
 		}
 
 
@@ -883,8 +910,8 @@
 
 			.jp-title {
 				border: none;
-				color: $light_grey - 66;
-				width: 19.9%;
+				color: $light_grey - 55;
+				width: 22.9%;
 				float: left;
 				background: $darker_grey - 32;
 				border-right: 1px dashed $light_grey - 88;
@@ -894,16 +921,16 @@
 						display: block;
 						@include liberator;
 						font-size: 14px;
-						padding: 9px 0 4px;
+						padding: 9px 0 7px;
 						border-bottom: 1px dashed $light_grey - 88;		
 					}
 
 					.jplayer_client {
 						@include tisa_bold;
 						font-style: italic;
-						font-size: 13px;
-						letter-spacing: 1px;
-						padding: 4px 0;
+						font-size: 12px;
+						letter-spacing: 0px;
+						padding: 3px 0;
 					}
 
 
@@ -912,7 +939,7 @@
 
 			.jp-gui {
 				display: inline;
-				width: 80%;
+				width: 77%;
 				float: right;
 				background: none;
 				}	
@@ -993,7 +1020,7 @@
 				left: 200px;
 				top: 27px;
 				height: 6px;
-				width: 66%;
+				width: 64%;
 				}
 
 			.jp-close {

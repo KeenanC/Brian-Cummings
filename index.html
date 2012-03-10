@@ -13,7 +13,7 @@
 
 	<meta charset="utf-8">
 	<meta name="description" content="A man of many voices and years of experience working with some of the biggest agencies and companies." />
-	<meta name="keywords" content="voice-over, voice over, voice acting, voice actor, voice, music, commercials, tv, narration, characters, acting, actor, promo, animation" />
+	<meta name="keywords" content="brian cummings, voice-over, voice over, voice acting, voice actor, voice, music, commercials, tv, narration, characters, acting, actor, promo, animation, voiceatility" />
 
 
 
@@ -65,6 +65,13 @@
 
 
 
+<!--
+("setMedia", {
+-            m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
+-            oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+-          });
+-->
+
 
 	  <script type="text/javascript">
 
@@ -81,20 +88,48 @@
 			        },
 
 			        swfPath: "/js/jplayer",
-			        supplied: "mp3",
+			        supplied: "mp3, oga", 
 
 			 });
 			
 			$(".audio_click").click(function(e) {
+				
+				// prevents a link from jumping to anchor
 				e.preventDefault();
-				$('#jplayer_footer').animate( {'height':'60px' }, 200 );
-				var audio = $(e.target).data('audio');
-				console.log(audio);
 
+				//animates position of the player
+				$('#jplayer_footer').animate( {'height':'60px' }, 200 );
+
+				// create variables for both audio file types on click event(e)
+				var audio = $(e.target).data('audio');
+				var audioff = $(e.target).data('audioff');
+
+				//Set media in the player
 				$("#jquery_jplayer_1").jPlayer("setMedia", {
-					mp3: "audio/" + audio
+					mp3: "audio/" + audio, 
+					oga: "audio/" + audioff
 				});
+
+				// plays the audio on click
 				$("#jquery_jplayer_1").jPlayer("play");
+
+
+				// Creates name/client variable and appends player elements
+				var name = $(e.target).data('name');
+				var client = $(e.target).data('client');
+				$('.jplayer_audio_name').html(name);
+				$(".jplayer_client").html(client);
+
+
+				// Stops player and animates position to hide
+				$(".jp-close").click(function() {
+					console.log("test");
+					$("#jquery_jplayer_1").jPlayer("pause");
+					$('#jplayer_footer').animate( {'height':'0px' }, 200 );
+
+				});
+ 
+
 			});
 
 		});
@@ -117,6 +152,7 @@
 	<script type="text/javascript">
 	
 		$(document).ready(function() {
+
 			//	ONE CORNER ROUNDED
 			$('.outlined_box').corner("bevel br 18px").parent().css('padding', '0px').corner("bevel br 24px");
 
@@ -125,10 +161,8 @@
 			
 			//	4 CORNERS ROUNDED
 			$('.outlined_box_4corners').corner("bevel 18px").parent().css('padding', '0px').corner("bevel 24px");
+
 		});	
-
-
-	
 
 	</script>
 
@@ -137,8 +171,18 @@
 
 <!-- ///// SCROLL ANIMATE //////////////////////////////// -->
 
+
 	<script type="text/javascript" src="js/jquery.anchor.js"></script>
 
+	<script type="text/javascript">
+
+	$(document).ready(function() { 
+		$('#class_sign_up_btn, #work_with_brian_btn').click(function() {
+			$('#name').focus();
+			});
+	});
+
+	</script>
 
 
 
@@ -239,7 +283,7 @@
 			 		Brian Cummings is a multifaceted performer, who has been a staple in voice-over as a gifted talent, writer, producer, and musician. From believable straight man to characters and animation, his work is varied and memorable. He’s been warm and inviting, a macho pitchman, an insane psycho. He’s delivered sly sensuous invitations and even pulled off a screaming rock &amp; roll vegetable. When not hyping DVD’s, major feature films, and sweet family TV fare,
 			 	</p>	
 
-			 	 <a href="#"><div id="work_with_brian_btn">work with brian</div></a>
+			 	 <a href="#name"><div id="work_with_brian_btn">work with brian</div></a>
 			 </div>
 	</div>
 
@@ -252,29 +296,42 @@
 			<div id="clients_text_nested" class="outlined_box">
 				
 				<ul id="list1" class="clients_lists">
-					<li>&#8729;client 1</li>
-					<li>&#8729;client 2</li>
-					<li>&#8729;client 3</li>
-					<li>&#8729;client 4</li>
-					<li>&#8729;client 5</li>
-					<li>&#8729;client 6</li>
+					<li>Traveler's</li>
+					<li>McDonalds</li>
+					<li>Chef Boyardee</li>
+					<li>Toyota</li>
+					<li>Am Ex</li>
+					<li>Gatorade</li>
+					<li>Sara Lee</li>
+					<li>Disney</li>
+					<li>Dreamworks</li>
+					<li>Mattel Toys</li>
+					<li>Tru TV</li>
+					<li>ABC, CBS, Fox</li>
 				</ul>	
 
 				<ul id="list2" class="clients_lists">
-					<li>&#8729;client 1</li>
-					<li>&#8729;client 2</li>
-					<li>&#8729;client 3</li>
-					<li>&#8729;client 4</li>
-					<li>&#8729;client 5</li>
-					<li>&#8729;client 6</li>
-					<li>&#8729;client 3</li>
-					<li>&#8729;client 4</li>
-					<li>&#8729;client 5</li>
-					<li>&#8729;client 6</li>
+					<li>Dr. Mindbender, <span>Original G.I. Joe</span></li>
+
+					<li>Dr. Socolov, <span>Metal Gear Solid</span></li>
+
+					<li>Papa Q. Bear, <span>Berenstain Bears</span></li>
+
+				<!--<li>Baumusu, <span>Mark of Kri</span></li>-->
+
+					<li>Hollywood, <span>2 Stupid Dogs</span></li>
+
+					<li>Bumblion, <span>Wuzzles</span></li>
+
+					<li>Doofus,<span>Ducktales</span></li>
+
+					<li>Le Stove, <span>Beauty & The Beast</span></li>
+
+					<li>12 Characters <span>Everquest II</span></li>
 				</ul>	
 
 
-				<a href="http://www.imdb.com/name/nm0191858/" target="blank"><div id="more_on_imdb_btn">More on IMDB</div></a>
+				<a href="http://www.imdb.com/name/nm0191858/" target="blank"><div id="more_on_imdb_btn">many More on IMDB</div></a>
 
 			
 			</div>
@@ -322,9 +379,9 @@
 
 
 		<div id="head2" class="head_box">
-			<a href="#work_with_brian_btn" id="head2_nested" class="head_box_nested outlined_box_4corners audio_click" data-name='Angry Brian' data-client='client 1' data-audio='01_warrior.mp3'>
-				Angry Brian<br />
-				<span class="project_subtitle">client name</span>
+			<a href="#" id="head2_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Sincerely Direct" data-client="Chef Boyardee / Elmer's" data-audio="01_chef.mp3" data-audioff="01_chef.ogv">
+				Sincerely Direct<br />
+				<span class="project_subtitle">Chef Boyardee / Elmer's</span>
 				<p>no.1</p>
 			</a>
 		</div>	
@@ -332,9 +389,9 @@
 
 
 		<div id="head3" class="head_box">
-			<a href="#" id="head3_nested" class="head_box_nested outlined_box_4corners">
-				Brian Head Here<br />
-				<span class="project_subtitle">client name</span>
+			<a href="#" id="head3_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Sweetly Inspired" data-client="Florida Citrus" data-audio="02_florida.mp3" data-audioff="02_florida.ogv">
+				Sweetly Inspired<br />
+				<span class="project_subtitle">Florida Citrus</span>
 				<p>no.2</p>
 			</a>
 		</div>	
@@ -342,9 +399,9 @@
 
 
 		<div id="head4" class="head_box">
-			<a href="#" id="head4_nested" class="head_box_nested outlined_box_4corners">
-				Brian Head Here<br />
-				<span class="project_subtitle">client name</span>
+			<a href="#" id="head4_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Classic Narrative" data-client="John Ford Biography" data-audio="03_ford.mp3" data-audioff="03_ford.ogv">
+				Classic Narrative<br />
+				<span class="project_subtitle">John Ford Biography</span>
 				<p>no.3</p>
 			</a>
 		</div>
@@ -354,36 +411,36 @@
 
 
 		<div id="head5" class="head_box">
-			<a href="#" id="head5_nested" class="head_box_nested outlined_box_4corners">
-				Brian Head Here<br />
-				<span class="project_subtitle">client name</span>
+			<a href="#" id="head5_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Gritty Humor" data-client="7-11" data-audio="04_burrito.mp3" data-audioff="04_burrito.ogv">
+				Gritty Humor<br />
+				<span class="project_subtitle">7-11</span>
 				<p>no.4</p>
 			</a>
 		</div>	
 
 
 		<div id="head6" class="head_box">
-			<a href="#" id="head6_nested" class="head_box_nested outlined_box_4corners">
-				Brian Head Here<br />
-				<span class="project_subtitle">client name</span>
+			<a href="#" id="head6_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Animated &amp; Emotive" data-client="Forthcoming Adventure Game / Mandy &amp; Sharky" data-audio="05_warrior.mp3" data-audioff="05_warrior.ogv">
+				Animated &amp; Emotive<br />
+				<span class="project_subtitle">Forthcoming Adventure Game / Mandy &amp; Sharky</span>
 				<p>no.5</p>
 			</a>
 		</div>	
 
 
 		<a href="#" id="head7" class="head_box">
-			<div id="head7_nested" class="head_box_nested outlined_box_4corners">
-				Brian Head Here<br />
-				<span class="project_subtitle">client name</span>
+			<div id="head7_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Madcap Iconic" data-client="Joke in a Box" data-audio="06_joke.mp3" data-audioff="06_joke.ogv">
+				Madcap Iconic<br />
+				<span class="project_subtitle">Joke in a Box</span>
 				<p>no.6</p>
 			</div>
 		</a>	
 
 
 		<div id="head8" class="head_box">
-			<a href="#" id="head8_nested" class="head_box_nested outlined_box_4corners">
-				Brian Head Here<br />
-				<span class="project_subtitle">client name</span>
+			<a href="#" id="head8_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Sly Drama" data-client="Harry Potter Promo Spoof" data-audio="07_potter.mp3" data-audioff="07_potter.ogv">
+				Sly Drama<br />
+				<span class="project_subtitle">Harry Potter Promo Spoof</span>
 				<p>no.7</p>
 			</a>
 		</div>		
@@ -393,36 +450,36 @@
 
 
 		<div id="head9" class="head_box">
-			<a href="#" id="head9_nested" class="head_box_nested outlined_box_4corners">
-				Brian Head Here<br />
-				<span class="project_subtitle">client name</span>
+			<a href="#" id="head9_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Witty &amp; Warm" data-client="AT&T / Giacche &amp; the Beanstalk" data-audio="08_att.mp3" data-audioff="08_att.ogv">
+				Witty &amp; Warm<br />
+				<span class="project_subtitle">AT&T / Giacche &amp; the Beanstalk</span>
 				<p>no.8</p>
 			</a>
 		</div>	
 
 
 		<div id="head10" class="head_box">
-			<a href="#" id="head10_nested" class="head_box_nested outlined_box_4corners">
-				Brian Head Here<br />
-				<span class="project_subtitle">client name</span>
+			<a href="#" id="head10_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Stylish Interplay" data-client="Milwaukee Wave / Edison" data-audio="09_wave_edison.mp3" data-audioff="09_wave_edison.ogv">
+				Stylish Interplay<br />
+				<span class="project_subtitle">Milwaukee Wave / Edison</span>
 				<p>no.9</p>
 			</a>
 		</div>	
 
 
 		<a href="#" id="head11" class="head_box">
-			<div id="head11_nested" class="head_box_nested outlined_box_4corners">
-				Brian Head Here<br />
-				<span class="project_subtitle">client name</span>
+			<div id="head11_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Lively Chracter" data-client="McDonalds" data-audio="10_mcdonalds.mp3" data-audioff="10_mcdonalds.ogv">
+				Lively Chracter<br />
+				<span class="project_subtitle">McDonalds</span>
 				<p>no.10</p>
 			</div>
 		</a>	
 
 
 		<div id="head12" class="head_box">
-			<a href="#" id="head12_nested" class="head_box_nested outlined_box_4corners">
-				Brian Head Here<br />
-				<span class="project_subtitle">client name</span>
+			<a href="#" id="head12_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Delicious Charm" data-client="PF Chang's / Sara Lee" data-audio="11_pfchangs.mp3" data-audioff="11_pfchangs.ogv">
+				Delicious Charm<br />
+				<span class="project_subtitle">PF Chang's / Sara Lee</span>
 				<p>no.11</p>
 			</a>
 		</div>		
@@ -447,27 +504,27 @@
 		</div>
 
 		<div id="demo1" class="demo_button_container">
-			<a href="#" class="demo_button">TV &amp; Radio</a>
+			<a href="#" class="demo_button audio_click" data-name="TV &amp; Radio" data-client="demo" data-audio="demo_tv_radio.mp3" data-audioff="demo_tv_radio.ogv">TV &amp; Radio</a>
 		</div>
 
 
 		<div id="demo2" class="demo_button_container">
-			<a href="#" class="demo_button">Characters</a>
+			<a href="#" class="demo_button audio_click" data-name="Characters" data-client="demo" data-audio="demo_characters.mp3" data-audioff="demo_characters.ogv">Characters</a>
 		</div>
 
 
 		<div id="demo3" class="demo_button_container">
-			<a href="#" class="demo_button">Animation</a>
+			<a href="#" class="demo_button audio_click" data-name="Animation" data-client="demo" data-audio="demo_animation.mp3" data-audioff="demo_animation.ogv">Animation</a>
 		</div>
 
 
 		<div id="demo4" class="demo_button_container">
-			<a href="#" class="demo_button">Film &amp; TV</a>
+			<a href="#" class="demo_button audio_click" data-name="Film &amp; TV" data-client="demo" data-audio="demo_film_tv.mp3" data-audioff="demo_film_tv.ogv">Film &amp; TV</a>
 		</div>
 
 
 		<div id="demo5" class="demo_button_container">
-			<a href="#" class="demo_button">Narration</a>
+			<a href="#" class="demo_button audio_click" data-name="Narration" data-client="demo" data-audio="demo_narration.mp3" data-audioff="demo_narration.ogv">Narration</a>
 		</div>
 
 	</div>
@@ -506,7 +563,9 @@
 
 			 		<br />
 
-			 		<div id="class_sign_up_btn"> Sign up! </div>	
+			 		<a href="http://skl.sh/zK5jix" target="blank">
+			 		<div id="class_sign_up_btn"> Sign up! </div>
+			 		</a>	
 
 			 	</div>
 
@@ -552,13 +611,12 @@
 		<ul id="contact_info">
 
 
-			<li>brian: <a href="hello@thebriancummings.com">hello@thebriancummings.com</a></li>
+			<li>brian: <a href="mailto:hello@thebriancummings.com?Subject=We%20need%20a%20good%20voice!">hello@thebriancummings.com</a></li>
 
-			<li>agent: <a href="mailto:jeff@dpntalent.com">jeff@dpntalent.com</a></li>
+			<li>agent: <a href="mailto:jeff@dpntalent.com?Subject=Working%20with%20Brian">jeff@dpntalent.com</a></li>
 			
 
 		</ul>
-
 			
 	</div>
 

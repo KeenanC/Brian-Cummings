@@ -136,7 +136,7 @@ body {
   #bio_text #bio_text_nested {
     padding: 23px 40px 20px 25px;
     margin: 12px;
-    height: 290px;
+    height: 350px;
     background: white;
     font-family: "ff-tisa-web-pro",serif;
     font-style: normal;
@@ -173,7 +173,7 @@ body {
   -moz-transition: all .04s ease-in-out;
   transition: all .04s ease-in-out;
   position: absolute;
-  bottom: 25px;
+  bottom: 20px;
   left: 23px; }
   #work_with_brian_btn:hover {
     background: #d8b200;
@@ -185,7 +185,7 @@ body {
     border-top-color: #e3bd00;
     background: #e3bd00; }
   #work_with_brian_btn:hover {
-    bottom: 22px; }
+    bottom: 17px; }
 
 /*	#work_with_brian_btn {
 		background: $primary;
@@ -207,7 +207,7 @@ body {
   #clients_text #clients_text_nested {
     padding: 23px 0px 20px 13px;
     margin: 12px;
-    height: 290px;
+    height: 350px;
     background: white; }
 
 .clients_lists {
@@ -215,22 +215,32 @@ body {
   font-style: normal;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  font-style: italic;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 13px;
+  line-height: 17px;
   color: #333333;
   list-style: none;
   float: left;
   margin-right: 0px; }
+  .clients_lists li:before {
+    content: "·";
+    margin-right: 2px; }
+  .clients_lists span {
+    color: #afafb0;
+    display: inline-block;
+    text-indent: 6px;
+    font-style: italic; }
 
 #list1 {
-  width: 130px;
-  margin-left: 13px; }
+  width: 120px;
+  margin-left: 13px;
+  line-height: 23px; }
 
 #list2 {
-  width: 110px;
+  width: 120px;
   margin-left: 0px;
   margin-right: 0; }
+  #list2 li {
+    margin-bottom: 5px; }
 
 #more_on_imdb_btn {
   text-decoration: none;
@@ -259,7 +269,7 @@ body {
   -moz-transition: all .04s ease-in-out;
   transition: all .04s ease-in-out;
   position: absolute;
-  bottom: 25px;
+  bottom: 20px;
   left: 23px; }
   #more_on_imdb_btn:hover {
     background: #d8b200;
@@ -271,7 +281,7 @@ body {
     border-top-color: #e3bd00;
     background: #e3bd00; }
   #more_on_imdb_btn:hover {
-    bottom: 22px; }
+    bottom: 17px; }
 
 /* 	--------------------------------------------------------------
 	TWITTER BOX
@@ -399,7 +409,7 @@ body {
     word-spacing: -3px;
     -webkit-font-smoothing: antialiased;
     font-size: 15px;
-    line-height: 15px;
+    line-height: 16px;
     letter-spacing: 1px;
     margin: 12px;
     height: 170px;
@@ -412,8 +422,9 @@ body {
       font-style: normal;
       font-weight: 700;
       -webkit-font-smoothing: antialiased;
+      font-size: 13px;
       font-style: italic;
-      letter-spacing: 1px;
+      letter-spacing: 0px;
       word-spacing: normal; }
     .head_box .head_box_nested p {
       margin-top: 116px;
@@ -607,7 +618,10 @@ body {
   -webkit-transition: all .04s ease-in-out;
   -moz-transition: all .04s ease-in-out;
   transition: all .04s ease-in-out;
-  padding: 2px 14px; }
+  text-decoration: none;
+  position: absolute;
+  bottom: 20px;
+  left: 23px; }
   #class_sign_up_btn:hover {
     background: #d8b200;
     margin-top: 24px;
@@ -617,6 +631,8 @@ body {
   #class_sign_up_btn:active {
     border-top-color: #e3bd00;
     background: #e3bd00; }
+  #class_sign_up_btn:hover {
+    bottom: 17px; }
 
 /* 	--------------------------------------------------------------
 	CONTACT FORM
@@ -755,8 +771,8 @@ select {
   border: none; }
   #jp_container_1 .jp-title {
     border: none;
-    color: #afafb0;
-    width: 19.9%;
+    color: #bababb;
+    width: 22.9%;
     float: left;
     background: #131313;
     border-right: 1px dashed #99999a; }
@@ -767,7 +783,7 @@ select {
       word-spacing: -3px;
       -webkit-font-smoothing: antialiased;
       font-size: 14px;
-      padding: 9px 0 4px;
+      padding: 9px 0 7px;
       border-bottom: 1px dashed #99999a; }
     #jp_container_1 .jp-title .jplayer_client {
       font-family: "ff-tisa-web-pro",serif;
@@ -775,12 +791,12 @@ select {
       font-weight: 700;
       -webkit-font-smoothing: antialiased;
       font-style: italic;
-      font-size: 13px;
-      letter-spacing: 1px;
-      padding: 4px 0; }
+      font-size: 12px;
+      letter-spacing: 0px;
+      padding: 3px 0; }
   #jp_container_1 .jp-gui {
     display: inline;
-    width: 80%;
+    width: 77%;
     float: right;
     background: none; }
   #jp_container_1 .jp-audio, #jp_container_1 .jp-controls {
@@ -826,7 +842,7 @@ select {
     left: 200px;
     top: 27px;
     height: 6px;
-    width: 66%; }
+    width: 64%; }
   #jp_container_1 .jp-close {
     font: 15px 'liberator';
     letter-spacing: 2px;
