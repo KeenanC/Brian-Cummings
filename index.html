@@ -179,6 +179,7 @@
 	$(document).ready(function() { 
 		$('#class_sign_up_btn, #work_with_brian_btn').click(function() {
 			$('#name').focus();
+			$('#name').css('background','#E3BD00').delay(500).animate( {'background':'grey'}, 300);
 			});
 	});
 
@@ -623,10 +624,16 @@
                 type: "POST",
                 data: JSON.stringify({name: name, email: email, message: message}),
                 success: function(){
-                  console.log('submitted');
-                  // DO SOMETHING HERE ON SUCCESS
-                }
+                  $("#confirmation").animate( {'top' : '125px'}, 300).delay(4000).animate( {'top' : '-265px'}, 200);
+                  $("#confirmation_shadow").animate( {'top' : '130px'}, 50).delay(4200).animate( {'top' : '110px'}, 200);
 
+                  // Allow close button to close confirm. Use clearQueue() to clear delay
+				 $(".close_email_confirmation").click(function() {
+			 		console.log("this this this");
+	                  $("#confirmation").clearQueue().animate( {'top' : '-265px'}, 200);
+	                  return false;
+              		});
+                }
               });
             });
           });
@@ -634,16 +641,23 @@
 
 
 		<ul id="contact_info">
-
-
 			<li>brian: <a href="mailto:hello@thebriancummings.com?Subject=We%20need%20a%20good%20voice!">hello@thebriancummings.com</a></li>
 
-			<li>agent: <a href="mailto:jeff@dpntalent.com?Subject=Working%20with%20Brian">jeff@dpntalent.com</a></li>
-			
-
-		</ul>
-			
+			<li>agent: <a href="mailto:jeff@dpntalent.com?Subject=Working%20with%20Brian">jeff@dpntalent.com</a></li>			
+		</ul>			
 	</div>
+
+
+	<div id="confirmation_shadow">aefaf</div>
+
+	<div id="confirmation">
+		<div id="confirmation_nested">
+			<p>Thanks for getting in touch!</p>
+			<p>I'll get back to you shortly.</p>
+			<p>In the meantime, <span>check out <a href="http://blog.thebriancummings.com/" target="blank">the blog.</a></span><p>
+			<a href="#" class="close_email_confirmation">&#10006; close</a>
+		</div>	
+	</div>	
 
 
 

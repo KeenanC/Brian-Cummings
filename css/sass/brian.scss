@@ -864,6 +864,75 @@
 
 		}
 
+	#confirmation_shadow {
+		-moz-box-shadow:    0 5px 10px black;
+	 	-webkit-box-shadow: 0 5px 10px black;
+		box-shadow:         0 5px 10px black;
+		opacity: .05;
+		@include grid-unit(8);
+		position: fixed;
+		right: 20%;
+		top: 110px;
+		z-index: 1;
+	}
+
+	#confirmation {
+		@include grid-unit(8);
+		position: fixed;
+		height: 400px;
+		left: 50%;
+		top: -265px;
+		margin-left: -322px;
+		background: $light_grey;
+		-moz-box-shadow:    0 4px 10px $dark_grey + 99;
+	 	-webkit-box-shadow: 0 4px 10px $dark_grey + 99;
+		box-shadow:         0 4px 10px $dark_grey + 99;
+		z-index: 0;
+		opacity: .99;
+
+			#confirmation_nested {
+				text-align: center;
+				padding: 33px 40px 20px 25px;
+				margin: 12px;
+				height: 320px;
+				background: white;
+				@include tisa_regular;
+				font-size: 30px;
+				line-height: 46px;
+				color: $darker_grey;
+
+					p:first-child {
+						display: block;
+						margin-top: 50px;
+						}
+
+					a {
+						color: $primary;
+						&:hover {
+							color: $dark_grey;
+							}
+						}
+
+					span {
+						font-style: italic;
+						}	
+
+					.close_email_confirmation {
+						display: block;
+						@include liberator;
+						font-size: 15px;
+						position: absolute;
+						bottom: 70px;
+						left: 50%;
+						margin-left: -22px;
+						}					
+				}
+	}
+
+
+
+
+
 
 
 
