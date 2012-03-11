@@ -589,23 +589,48 @@
 
 
 
-	<div id="contact_form_container">
+  <div id="contact_form_container">
 
-		
 
-			<form id="contact_form" method="post" action="contactengine.php">
-				
-				<input class="inputs" type="text" id="name" placeholder="your name?" />
 
-				<input class="inputs" type="text" id="email" placeholder="your email?" />
-				
+      <form id="contact_form" method="post" action="contactengine.php">
 
-				<textarea placeholder="How can help?"name="Message" rows="20" cols="20" id="message"></textarea>
+        <input class="inputs" type="text" id="name" placeholder="your name?" />
 
-				<input type="submit" name="submit" value="Submit" id="submit_button" />
+        <input class="inputs" type="email" id="email" placeholder="your email?" />
 
-			</form>
 
+        <textarea placeholder="How can help?"name="Message" rows="20" cols="20" id="message"></textarea>
+
+        <input type="submit" name="submit" value="Submit" id="submit_button" />
+
+      </form>
+
+      <script type='text/javascript'>
+        $(function() {
+            $("form#contact_form").submit(function(e) {
+              e.preventDefault();
+              var name = $(e.target).find("input#name").val();
+              var email = $(e.target).find("input#email").val();
+              var message = $(e.target).find("textarea#message").val();
+              $.ajax({
+                url: "https://api.parse.com/1/classes/Contacts",
+                headers: {
+                  "X-Parse-Application-Id": "JaPC2B5jq7Mlh6Em28kOCGa5kSoB5JpMUTV2Uwoj",
+                  "X-Parse-REST-API-Key": "TTabZSswJpbZVoSbDBLUvwKUFWvTXXTK1qi2W2rZ",
+                  "Content-Type": "application/json",
+                  },
+                type: "POST",
+                data: JSON.stringify({name: name, email: email, message: message}),
+                success: function(){
+                  console.log('submitted');
+                  // DO SOMETHING HERE ON SUCCESS
+                }
+
+              });
+            });
+          });
+      </script>
 
 
 		<ul id="contact_info">
