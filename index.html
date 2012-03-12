@@ -35,6 +35,9 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 
 
+	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+
+
 
 <!-- GOOGLE ANALYTICS ----------------------------------- -->
 
@@ -177,9 +180,9 @@
 	<script type="text/javascript">
 
 	$(document).ready(function() { 
-		$('#class_sign_up_btn, #work_with_brian_btn').click(function() {
+		$('#work_with_brian_btn, #contact a').click(function() {
 			$('#name').focus();
-			$('#name').css('background','#E3BD00').delay(500).animate( {'background':'grey'}, 300);
+		    $('#name').effect("highlight", {color: '#E3BD00'}, 2500);
 			});
 	});
 
@@ -400,9 +403,9 @@
 
 
 		<div id="head4" class="head_box">
-			<a href="#" id="head4_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Classic Narrative" data-client="John Ford Biography" data-audio="03_ford.mp3" data-audioff="03_ford.ogv">
+			<a href="#" id="head4_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Classic Narrative" data-client="John Ford / Shadai Edit" data-audio="03_ford.mp3" data-audioff="03_ford.ogv">
 				Classic Narrative<br />
-				<span class="project_subtitle">John Ford Biography</span>
+				<span class="project_subtitle">John Ford / Shadai Edit</span>
 				<p>no.3</p>
 			</a>
 		</div>
@@ -412,27 +415,27 @@
 
 
 		<div id="head5" class="head_box">
-			<a href="#" id="head5_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Gritty Humor" data-client="7-11" data-audio="04_burrito.mp3" data-audioff="04_burrito.ogv">
+			<a href="#" id="head5_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Gritty Humor" data-client="7-11 / F.D. Blues" data-audio="04_burrito.mp3" data-audioff="04_burrito.ogv">
 				Gritty Humor<br />
-				<span class="project_subtitle">7-11</span>
+				<span class="project_subtitle">7-11 / F.D. Blues</span>
 				<p>no.4</p>
 			</a>
 		</div>	
 
 
 		<div id="head6" class="head_box">
-			<a href="#" id="head6_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Animated &amp; Emotive" data-client="Forthcoming Adventure Game / Mandy &amp; Sharky" data-audio="05_warrior.mp3" data-audioff="05_warrior.ogv">
+			<a href="#" id="head6_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Animated &amp; Emotive" data-client="SciFi Game / Mandy &amp; Sharky" data-audio="05_warrior.mp3" data-audioff="05_warrior.ogv">
 				Animated &amp; Emotive<br />
-				<span class="project_subtitle">Forthcoming Adventure Game / Mandy &amp; Sharky</span>
+				<span class="project_subtitle">SciFi Game / Mandy &amp; Sharky</span>
 				<p>no.5</p>
 			</a>
 		</div>	
 
 
 		<a href="#" id="head7" class="head_box">
-			<div id="head7_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Madcap Iconic" data-client="Joke in a Box" data-audio="06_joke.mp3" data-audioff="06_joke.ogv">
-				Madcap Iconic<br />
-				<span class="project_subtitle">Joke in a Box</span>
+			<div id="head7_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Madcap Style" data-client="Joke In A Box / Jokers" data-audio="06_joke.mp3" data-audioff="06_joke.ogv">
+				Madcap Style<br />
+				<span class="project_subtitle">Joke In A Box / Jokers</span>
 				<p>no.6</p>
 			</div>
 		</a>	
@@ -451,17 +454,17 @@
 
 
 		<div id="head9" class="head_box">
-			<a href="#" id="head9_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Witty &amp; Warm" data-client="AT&T / Giacche &amp; the Beanstalk" data-audio="08_att.mp3" data-audioff="08_att.ogv">
+			<a href="#" id="head9_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Witty &amp; Warm" data-client="AT&amp;T / Italian Beanstalk" data-audio="08_att.mp3" data-audioff="08_att.ogv">
 				Witty &amp; Warm<br />
-				<span class="project_subtitle">AT&T / Giacche &amp; the Beanstalk</span>
+				<span class="project_subtitle">AT&amp;T / Italian Beanstalk</span>
 				<p>no.8</p>
 			</a>
 		</div>	
 
 
 		<div id="head10" class="head_box">
-			<a href="#" id="head10_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Stylish Interplay" data-client="Milwaukee Wave / Edison" data-audio="09_wave_edison.mp3" data-audioff="09_wave_edison.ogv">
-				Stylish Interplay<br />
+			<a href="#" id="head10_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Iconic Interplay" data-client="Milwaukee Wave / Edison" data-audio="09_wave_edison.mp3" data-audioff="09_wave_edison.ogv">
+				Iconic Interplay<br />
 				<span class="project_subtitle">Milwaukee Wave / Edison</span>
 				<p>no.9</p>
 			</a>
@@ -469,8 +472,8 @@
 
 
 		<a href="#" id="head11" class="head_box">
-			<div id="head11_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Lively Chracter" data-client="McDonalds" data-audio="10_mcdonalds.mp3" data-audioff="10_mcdonalds.ogv">
-				Lively Chracter<br />
+			<div id="head11_nested" class="head_box_nested outlined_box_4corners audio_click" data-name="Real Voiceatility" data-client="McDonalds" data-audio="10_mcdonalds.mp3" data-audioff="10_mcdonalds.ogv">
+				Real Voiceatility<br />
 				<span class="project_subtitle">McDonalds</span>
 				<p>no.10</p>
 			</div>
@@ -629,7 +632,6 @@
 
                   // Allow close button to close confirm. Use clearQueue() to clear delay
 				 $(".close_email_confirmation").click(function() {
-			 		console.log("this this this");
 	                  $("#confirmation").clearQueue().animate( {'top' : '-265px'}, 200);
 	                  return false;
               		});
