@@ -298,7 +298,13 @@ body {
   float: left;
   display: inline;
   margin-left: -70px;
-  margin-top: 5px; }
+  margin-top: 5px;
+  width: 60px;
+  height: 60px;
+  background: blue;
+  background: url("../img/tweet_bird_sprite.gif"); }
+  #tweet_bird:hover {
+    background-position: 0px 60px; }
 
 #tweets {
   margin-top: 10px;
@@ -758,7 +764,8 @@ select {
   margin-right: 12px;
   width: 644px;
   position: fixed;
-  right: 20%;
+  left: 50%;
+  margin-left: -322px;
   top: 110px;
   z-index: 1; }
 

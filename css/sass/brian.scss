@@ -418,7 +418,16 @@
 		display: inline;
 		margin-left: -70px;
 		margin-top: 5px;
+		width: 60px;
+		height: 60px;
+		background: blue;
+		background: url('../img/tweet_bird_sprite.gif');
+		&:hover {
+			background-position: 0px 60px;
+		}
 	}
+
+
 
 	#tweets {
 		margin-top: 10px;
@@ -469,7 +478,7 @@
 			&:hover {
 				color: $darker_grey;
 				background: $primary;
-				}
+				}	
 
 			p {
 				margin-left: 16px;
@@ -874,7 +883,8 @@
 		opacity: .05;
 		@include grid-unit(8);
 		position: fixed;
-		right: 20%;
+		left: 50%;
+		margin-left: -322px;
 		top: 110px;
 		z-index: 1;
 	}
