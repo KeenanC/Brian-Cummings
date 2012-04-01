@@ -150,7 +150,7 @@ body {
     color: #333333; }
 
 .endorsement {
-  color: #a8a8a8;
+  color: #878787;
   margin-right: 24px;
   margin-top: 25px;
   font-size: 15px;
@@ -246,7 +246,7 @@ body {
     content: "·";
     margin-right: 2px; }
   .clients_lists span {
-    color: #afafb0;
+    color: #99999a;
     display: inline-block;
     text-indent: 6px;
     font-style: italic; }
